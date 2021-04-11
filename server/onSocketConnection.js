@@ -1,9 +1,10 @@
-const carsNames = ['Dror', 'Sara', 'David', 'Ben', 'Sophia', 'Yossi', 'Dana', 'Roy', 'Dodo'];
+const carsNames = ['Aba', 'Batya', 'Beni', 'Bibi', 'Coco', 'Dana', 'Dror', 'Roy', 'Sophia'];
 
-function sendCars (socket, shouldSkip = () => false) {
+function sendCars (socket, skipProbability) {
    const cars = {};
    carsNames.forEach((name)=> {
-      if (shouldSkip()) return;
+      const shouldSkip = Math.random() < skipProbability
+      if (shouldSkip) return;
       const posX = Math.random();
       const posY = Math.random();
       cars[name] = {posX, posY};
@@ -13,15 +14,16 @@ function sendCars (socket, shouldSkip = () => false) {
 
 function onSocketConnection(socket) {
    console.log('new connection!');
-   sendCars(socket);
+   sendCars(socket, 0);
 
    setTimeout(() => {
-      sendCars(socket)
+      sendCars(socket, 0.5)
    }, 1000);
 
    setInterval(() => {
-         sendCars(socket, () => Math.random() < 0.4)
-   }, 6000);
+         sendCars(socket, 0.85)
+   }, 3500);
 }
 
 module.exports = onSocketConnection;
+

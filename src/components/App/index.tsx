@@ -3,8 +3,10 @@ import Grid from "@material-ui/core/Grid";
 
 import useSocketListen from "../../socket/useSocketListen";
 import { AppProvider } from "../../providers/app";
-import Sidebar from "../Sidebar";
+
 import Map from "../Map";
+import Search from "../Search";
+import CarsList from "../CarsList";
 import useStyles from "./styles";
 
 const AppInner = () => {
@@ -17,8 +19,9 @@ const AppInner = () => {
                 Dror Birenbaum: Home test for Practi
             </h1>
             <Grid container className={styles.content}>
-                <Grid item xs={2}>
-                    <Sidebar />
+                <Grid item lg={2} md={3} xs={4}>
+                    <Search />
+                    <CarsList />
                 </Grid>
                 <Grid item xs>
                     <Map />

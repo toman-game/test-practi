@@ -13,17 +13,13 @@ const useStyles = makeStyles(() => createStyles({
         position: 'absolute',
     },
     car: {
-        width: '43px',
-        height: '43px',
-
-    },
-    carName: {
-        color: 'white',
-        fontWeight: 'bold',
-        backgroundColor: 'red',
-        padding: '0 4px 1px 4px',
-        margin: '-30px 0 0 0',
-        fontSize: '11px'
+        transition: 'top 15s linear, left 15s linear',
+        position: 'absolute',
+        width: '60px',
+        height: '60px',
+        padding: '6px',
+        boxSizing: 'border-box',
+        borderRadius: '4px'
     }
 }));
 

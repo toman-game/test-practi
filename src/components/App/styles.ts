@@ -2,7 +2,7 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => createStyles({
     root: {
-        padding: '50px 80px',
+        padding: '30px 50px',
         width: '100vw',
         boxSizing: 'border-box'
     },

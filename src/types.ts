@@ -4,3 +4,5 @@ export type carTS = {
 }
 
 export type carsTS = Record<string, carTS>;
+
+export type namesSetTS = Record<string, true>;
